@@ -1,18 +1,20 @@
-package entity;
+package rs.ftn.edu.hackatonbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "STUDENTS")
-public class Student implements User{
+@Table(name = "TEACHERS")
+public class Teacher  implements User{
 
     @Id
     private int id;
@@ -34,12 +36,6 @@ public class Student implements User{
 
     @Column(name = "ASSOCIATED_SCHOOL")
     private String associatedSchool;
-
-    @ManyToMany
-    @JoinTable(name="TOPICS_PER_STUDENT",
-    joinColumns = @JoinColumn(name = "STUDENT_ID"),
-    inverseJoinColumns = @JoinColumn(name = "TOPIC_ID"))
-    List<Topic> topics;
 
     @Override
     public String getName() {
