@@ -1,4 +1,4 @@
-package entity;
+package rs.ftn.edu.hackatonbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

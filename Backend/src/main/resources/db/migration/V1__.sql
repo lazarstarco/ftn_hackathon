@@ -20,8 +20,8 @@ CREATE TABLE game_props
 CREATE TABLE games
 (
     id            INTEGER NOT NULL,
-    player1id     INTEGER,
-    player2id     INTEGER,
+    player_one_id INTEGER,
+    player_two_id INTEGER,
     game_props_id INTEGER,
     CONSTRAINT pk_games PRIMARY KEY (id)
 );
@@ -75,7 +75,7 @@ ALTER TABLE answers
     ADD CONSTRAINT FK_ANSWERS_ON_QUESTION FOREIGN KEY (question_id) REFERENCES questions (id);
 
 ALTER TABLE games
-    ADD CONSTRAINT FK_GAMES_ON_GAMEPROPSID FOREIGN KEY (game_props_id) REFERENCES game_props (id);
+    ADD CONSTRAINT FK_GAMES_ON_GAME_PROPS FOREIGN KEY (game_props_id) REFERENCES game_props (id);
 
 ALTER TABLE questions
     ADD CONSTRAINT FK_QUESTIONS_ON_TOPIC FOREIGN KEY (topic_id) REFERENCES topics (id);

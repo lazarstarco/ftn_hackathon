@@ -1,4 +1,4 @@
-package entity;
+package rs.ftn.edu.hackatonbackend.entity;
 
 public interface User {
 

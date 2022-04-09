@@ -1,4 +1,4 @@
-package entity;
+package rs.ftn.edu.hackatonbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +25,7 @@ public class Answer {
     private int questionId;
 
     @ManyToOne
-    @JoinColumn(name = "QUESTION_ID")
+    @JoinColumn(name = "QUESTION_ID", insertable = false, updatable = false)
     private Question question;
 
     @Column(name = "IS_CORRECT")
