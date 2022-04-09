@@ -20,7 +20,7 @@ export default {
       };
       await axios
         .post("http://localhost:8082/api/v1/students/login", data)
-        .then((response) => console.log(response.statusCode));
+        .then((response) => console.log(response));
     },
   },
 };
