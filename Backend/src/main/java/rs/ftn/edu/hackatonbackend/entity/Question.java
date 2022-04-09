@@ -1,4 +1,4 @@
-package entity;
+package rs.ftn.edu.hackatonbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class Question {
     private int topicId;
 
     @ManyToOne
-    @JoinColumn(name = "TOPIC_ID" )
+    @JoinColumn(name = "TOPIC_ID", insertable = false, updatable = false)
     private Topic topic;
 
     @OneToMany(mappedBy = "question")
