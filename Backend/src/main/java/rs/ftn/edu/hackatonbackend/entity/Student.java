@@ -35,6 +35,9 @@ public class Student implements User{
     @Column(name = "ASSOCIATED_SCHOOL")
     private String associatedSchool;
 
+    @Column(name = "GRADE")
+    private String grade;
+
     @ManyToMany
     @JoinTable(name="TOPICS_PER_STUDENT",
     joinColumns = @JoinColumn(name = "STUDENT_ID"),

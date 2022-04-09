@@ -37,6 +37,9 @@ public class Teacher  implements User{
     @Column(name = "ASSOCIATED_SCHOOL")
     private String associatedSchool;
 
+    @Column(name = "TOWN")
+    private String town;
+
     @Override
     public String getName() {
         return name;
