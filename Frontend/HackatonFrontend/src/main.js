@@ -13,8 +13,12 @@ import {
   fa2,
   fa3,
   fa4,
+  fa5,
   faUserAstronaut,
-  faFingerprint
+  faFingerprint,
+  faEnvelope,
+  faSchool,
+  faCity
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -22,7 +26,19 @@ import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 
-library.add(fa0, fa1, fa2, fa3, fa4, faUserAstronaut, faFingerprint);
+library.add(
+  fa0,
+  fa1,
+  fa2,
+  fa3,
+  fa4,
+  fa5,
+  faUserAstronaut,
+  faFingerprint,
+  faEnvelope,
+  faSchool,
+  faCity
+);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(BootstrapVue);

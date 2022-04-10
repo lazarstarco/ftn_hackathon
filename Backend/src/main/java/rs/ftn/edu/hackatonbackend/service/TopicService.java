@@ -20,13 +20,15 @@ public class TopicService {
     @Resource
     private TopicsPerStudentRepository topicsPerStudentRepository;
 
-    public List<Topic> getAllTopics(){
+    public List<Topic> getAllTopics() {
         return (List<Topic>) this.topicRepository.findAll();
     }
 
     public void saveTopicsPerStudent(TopicsPerStudentDto topicsPerStudentDto) {
-        topicsPerStudentDto.getTopicIds().forEach(topic -> topicsPerStudentRepository.save(
-                new TopicPerStudent(new TopicsPerStudentCompositeKey(topicsPerStudentDto.getStudentId(), topic))
-        ));
+        for (int topic : topicsPerStudentDto.getTopicIds()) {
+            TopicPerStudent topicPerStudent = new TopicPerStudent();
+            topicPerStudent.setTopicsPerStudentCompositeKey(new TopicsPerStudentCompositeKey(1, topic));
+            this.topicsPerStudentRepository.save(topicPerStudent);
+        }
     }
 }

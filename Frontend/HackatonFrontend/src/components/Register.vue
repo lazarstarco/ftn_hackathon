@@ -50,8 +50,7 @@
       <div class="user-box">
         <input type="text" name="" required="" v-model="user.email" />
         <label>
-          <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
-          Email</label
+          <font-awesome-icon icon="fa-solid fa-envelope" />&nbsp; Email</label
         >
       </div>
       <div class="user-box">
@@ -62,17 +61,14 @@
           v-model="user.associatedSchool"
         />
         <label>
-          <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp; Associated
+          <font-awesome-icon icon="fa-solid fa-school" />&nbsp; Associated
           school</label
         >
       </div>
       <div v-if="student">
         <div class="user-box">
           <input type="text" name="" required="" v-model="user.grade" />
-          <label>
-            <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
-            Grade</label
-          >
+          <label> <font-awesome-icon icon="fa-solid fa-5" />&nbsp; Grade</label>
         </div>
       </div>
       <b-row v-else>
@@ -80,8 +76,7 @@
           <div class="user-box">
             <input type="text" name="" required="" v-model="user.title" />
             <label>
-              <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
-              Title</label
+              <font-awesome-icon icon="fa-solid fa-school" />&nbsp; Title</label
             >
           </div>
         </b-col>
@@ -89,8 +84,7 @@
           <div class="user-box">
             <input type="text" name="" required="" v-model="user.town" />
             <label>
-              <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
-              Town</label
+              <font-awesome-icon icon="fa-solid fa-city" />&nbsp; Town</label
             >
           </div>
         </b-col>

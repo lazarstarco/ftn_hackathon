@@ -1,33 +1,32 @@
 package rs.ftn.edu.hackatonbackend.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "TOPICS_PER_STUDENT")
-@NoArgsConstructor
 public class TopicPerStudent {
 
     @EmbeddedId
     private TopicsPerStudentCompositeKey topicsPerStudentCompositeKey;
 
     @ManyToOne
-    @MapsId("studentId")
-    @JoinColumn(name = "STUDENT_ID")
-    private Student studentId;
+    @JoinColumn(name = "STUDENT_ID", insertable = false, updatable = false)
+    private Student student;
 
     @ManyToOne
-    @MapsId("topicId")
-    @JoinColumn(name = "TOPIC_ID")
-    private Student student;
+    @JoinColumn(name = "TOPIC_ID", insertable = false, updatable = false)
+    private Student topic;
+
+    public TopicPerStudent() {
+    }
 
     public TopicPerStudent(TopicsPerStudentCompositeKey topicsPerStudentCompositeKey) {
         this.topicsPerStudentCompositeKey = topicsPerStudentCompositeKey;
     }
-
 
 
 }
