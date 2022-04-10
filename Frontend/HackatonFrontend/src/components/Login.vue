@@ -68,7 +68,13 @@ export default {
           }/login`,
           this.user
         )
-        .then((response) => console.log(response));
+        .then((response) =>
+          response.data.status_code === 200
+            ? this.student
+              ? this.$router.push("/topics") // TODO
+              : this.$router.push("/")
+            : alert("JKUP")
+        );
     },
     isTeacher: function () {
       student = !student;

@@ -154,7 +154,14 @@ export default {
           }/register`,
           this.user
         )
-        .then((response) => console.log(response));
+        .then((response) =>
+          response.data.status_code === 200
+            ? this.student
+              ? this.$router.push("/topics")
+              : this.$router.push("/")
+            : alert("JKUP")
+        )
+        .catch((message) => console.log(message));
     },
     isTeacher: function () {
       student = !student;

@@ -4,6 +4,7 @@ import HelloWorld from "@/components/HelloWorld";
 import Login from "@/components/Login";
 import Register from "@/components/Register";
 import Answers from "@/components/Answers";
+import Topics from "@/components/Topics";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/answers",
       name: "Answers",
       component: Answers
+    },
+    {
+      path: "/topics",
+      name: "Topics",
+      component: Topics
     }
   ]
 });
