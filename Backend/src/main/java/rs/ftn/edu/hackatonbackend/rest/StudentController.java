@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rs.ftn.edu.hackatonbackend.dto.UserDto;
+import rs.ftn.edu.hackatonbackend.entity.Student;
 import rs.ftn.edu.hackatonbackend.model.ApiResponse;
 import rs.ftn.edu.hackatonbackend.service.StudentService;
 
@@ -38,5 +39,25 @@ public class StudentController {
                 "Login successful",
                 "/api/v1/students"
         ));
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<Object> registerStudent(@RequestBody Student student) {
+        if (this.studentService.findStudentByUsername(student.getUsername()) != null ) {
+            return ResponseEntity.badRequest().body(new ApiResponse(
+                    Timestamp.valueOf(LocalDateTime.now()),
+                    400,
+                    "User already exist",
+                    "/api/v1/students"
+            ));
+        }
+        studentService.saveStudent(student);
+        return ResponseEntity.ok(new ApiResponse(
+                Timestamp.valueOf(LocalDateTime.now()),
+                200,
+                "Login successful",
+                "/api/v1/students"
+        ));
+
     }
 }

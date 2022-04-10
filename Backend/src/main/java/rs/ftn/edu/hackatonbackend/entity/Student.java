@@ -15,6 +15,7 @@ import java.util.List;
 public class Student implements User{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "NAME")

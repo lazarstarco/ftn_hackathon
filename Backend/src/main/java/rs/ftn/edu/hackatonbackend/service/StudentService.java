@@ -19,4 +19,8 @@ public class StudentService {
     public Student findStudentByUsername(String username) {
         return this.studentRepository.findStudentByUsername(username);
     }
+
+    public void saveStudent(Student student) {
+        this.studentRepository.save(student);
+    }
 }
