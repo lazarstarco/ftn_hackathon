@@ -44,7 +44,7 @@ public class TeacherController {
     @PostMapping(path = "/register", consumes = {MediaType.APPLICATION_JSON_VALUE}
             , produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Object> registerTeacher(@RequestBody Teacher teacher) {
-        if (this.teacherService.findTeacherByUsername(teacher.getUsername()) == null) {
+        if (this.teacherService.findTeacherByUsername(teacher.getUsername()) != null) {
             return ResponseEntity.badRequest().body(new ApiResponse(
                     Timestamp.valueOf(LocalDateTime.now()),
                     400,
