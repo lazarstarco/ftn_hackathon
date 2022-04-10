@@ -1,9 +1,8 @@
 package rs.ftn.edu.hackatonbackend.rest;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import rs.ftn.edu.hackatonbackend.dto.TopicsPerStudentDto;
 import rs.ftn.edu.hackatonbackend.entity.Topic;
 import rs.ftn.edu.hackatonbackend.service.TopicService;
 
@@ -20,5 +19,11 @@ public class TopicController {
     @GetMapping
     public ResponseEntity<List<Topic>> getAllTopics(){
         return ResponseEntity.ok(this.topicService.getAllTopics());
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> insertTopicsPerStudent(@RequestBody TopicsPerStudentDto topicsPerStudentDto) {
+        this.topicService.saveTopicsPerStudent(topicsPerStudentDto);
+        return ResponseEntity.ok().build();
     }
 }
