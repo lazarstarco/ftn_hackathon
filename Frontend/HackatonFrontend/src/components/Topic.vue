@@ -24,8 +24,8 @@ export default {
       default: "Default",
     },
     order: {
-      type: String,
-      default: "Default answer",
+      type: Number,
+      default: 0,
     },
   },
   computed: {

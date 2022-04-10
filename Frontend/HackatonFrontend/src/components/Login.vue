@@ -46,6 +46,7 @@
 
 <script>
 import axios from "axios";
+import "../style/background.css";
 import "../style/form.css";
 
 export default {

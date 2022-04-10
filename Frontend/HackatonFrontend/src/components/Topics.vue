@@ -2,22 +2,34 @@
   <div>
     <h1>Topics</h1>
     <div class="custom-row">
-      <Topic topic="History" order="1" />
-      <Topic topic="Maths" order="2" />
-      <Topic topic="Science" order="3" />
-      <Topic topic="Chemistry" order="4" />
-      <Topic topic="Language" order="5" />
-      <Topic topic="PE" order="6" />
+      <Topic
+        v-for="topicc in topics"
+        :topic="topicc.topicName"
+        :order="topicc.id"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import Topic from "./Topic.vue";
 
+import "../style/background.css";
+
 export default {
+  data() {
+    return {
+      topics: [],
+    };
+  },
   components: {
     Topic,
+  },
+  async mounted() {
+    await axios.get("http://localhost:8082/api/v1/topics").then((response) => {
+      this.topics = response.data;
+    });
   },
 };
 </script>
