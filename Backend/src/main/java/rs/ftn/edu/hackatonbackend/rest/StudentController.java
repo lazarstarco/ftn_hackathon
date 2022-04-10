@@ -55,7 +55,7 @@ public class StudentController {
         return ResponseEntity.ok(new ApiResponse(
                 Timestamp.valueOf(LocalDateTime.now()),
                 200,
-                "Login successful",
+                "User created",
                 "/api/v1/students"
         ));
 
