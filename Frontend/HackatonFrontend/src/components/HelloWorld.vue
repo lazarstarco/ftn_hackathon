@@ -1,16 +1,16 @@
 <template>
   <b-container fluid>
-    <Register />
+    <Login />
   </b-container>
 </template>
 
 <script>
-import Register from "./Register.vue";
+import Login from "./Login.vue";
 import axios from "axios";
 
 export default {
   name: "HelloWorld",
-  components: { Register },
+  components: { Login },
 };
 </script>
 

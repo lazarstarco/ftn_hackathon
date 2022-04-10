@@ -28,8 +28,8 @@
         </b-col>
         <b-col cols="3"></b-col>
         <b-col cols="5">
-          <md-button class="md-dense md-primary mt-2" @click="fun()"
-            >No account?</md-button
+          <router-link to="/register" class="md-dense md-primary mt-2"
+            >No account?</router-link
           >
         </b-col>
       </b-row>

@@ -22,20 +22,31 @@
           </div>
         </b-col>
       </b-row>
-      <div class="user-box">
-        <input type="text" name="" required="" v-model="user.username" />
-        <label
-          ><font-awesome-icon icon="fa-solid fa-user-astronaut" /> &nbsp;
-          Username</label
-        >
-      </div>
-      <div class="user-box">
-        <input type="password" name="" required="" v-model="user.password" />
-        <label>
-          <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
-          Password</label
-        >
-      </div>
+      <b-row>
+        <b-col cols="6">
+          <div class="user-box">
+            <input type="text" name="" required="" v-model="user.username" />
+            <label
+              ><font-awesome-icon icon="fa-solid fa-user-astronaut" /> &nbsp;
+              Username</label
+            >
+          </div>
+        </b-col>
+        <b-col cols="6">
+          <div class="user-box">
+            <input
+              type="password"
+              name=""
+              required=""
+              v-model="user.password"
+            />
+            <label>
+              <font-awesome-icon icon="fa-solid fa-fingerprint" />&nbsp;
+              Password</label
+            >
+          </div>
+        </b-col>
+      </b-row>
       <div class="user-box">
         <input type="text" name="" required="" v-model="user.email" />
         <label>
@@ -84,15 +95,23 @@
           </div>
         </b-col>
       </b-row>
-      <div>
-        <md-switch
-          v-model="student"
-          class="md-primary isTeacher"
-          @click="isTeacher"
-        >
-          {{ student ? "Student" : "Teacher" }}
-        </md-switch>
-      </div>
+      <b-row>
+        <b-col cols="4">
+          <md-switch
+            v-model="student"
+            class="md-primary isTeacher"
+            @click="isTeacher"
+          >
+            {{ student ? "Student" : "Teacher" }}
+          </md-switch>
+        </b-col>
+        <b-col cols="2"></b-col>
+        <b-col cols="6">
+          <router-link to="/login" class="md-dense md-primary mt-2"
+            >Here by accident?</router-link
+          >
+        </b-col>
+      </b-row>
 
       <a @click="login()" href="#">
         <span></span>
