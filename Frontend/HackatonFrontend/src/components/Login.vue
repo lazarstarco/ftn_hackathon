@@ -16,15 +16,23 @@
           Password</label
         >
       </div>
-      <div>
-        <md-switch
-          v-model="student"
-          class="md-primary isTeacher"
-          @click="isTeacher"
-        >
-          {{ student ? "Student" : "Teacher" }}
-        </md-switch>
-      </div>
+      <b-row>
+        <b-col cols="4">
+          <md-switch
+            v-model="student"
+            class="md-primary isTeacher"
+            @click="isTeacher"
+          >
+            {{ student ? "Student" : "Teacher" }}
+          </md-switch>
+        </b-col>
+        <b-col cols="3"></b-col>
+        <b-col cols="5">
+          <md-button class="md-dense md-primary mt-2" @click="fun()"
+            >No account?</md-button
+          >
+        </b-col>
+      </b-row>
       <a @click="login()" href="#">
         <span></span>
         <span></span>

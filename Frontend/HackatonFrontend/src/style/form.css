@@ -12,8 +12,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 45rem;
   padding: 40px;
+  padding-bottom: 0;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
@@ -170,10 +171,4 @@ body {
 
 .isTeacher {
   color: white;
-  display: flex;
-  margin-right: auto;
-}
-
-.md-switch {
-  width: 100% !important;
 }
